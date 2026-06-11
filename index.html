@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css" />
+		<link rel="stylesheet" href="dist/reveal.css" />
+		<link rel="stylesheet" href="dist/theme/league.css" id="theme"/>
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="dist/plugin/highlight/monokai.css" />
+
+
+		<style>
+		    @font-face {
+				font-family: league;
+				src: url(css/theme/fonts/league-gothic/league-gothic.woff);
+			}
+
+			@font-face {
+                font-family: iosevka-charon;
+                src: url(myFonts/IosevkaCharon/IosevkaCharon-Regular.ttf);
+			}
+
+			:root {
+
+                --r-heading1-size: 150px;
+                --r-heading2-size: 100px;
+                --r-heading3-size: 65px;
+
+                --r-main-font: iosevka-charon;
+                --r-heading-font: league;
+                --r-heading-line-height: 125px;
+                --r-heading-margin: 35px;
+
+                --r-heading1-text-shadow:
+                    0 1px 0 rgb(40, 0, 85),
+                    0 2px 0 rgb(55, 5, 95),
+                    0 3px 0 rgb(70, 20, 105),
+                    0 4px 0 rgb(85, 35, 115),
+                    0 5px 0 rgb(100, 50, 125),
+                    0 6px 1px rgba(0, 0, 0, 0.1),
+                    0 0 5px rgba(0, 0, 0, 0.1),
+                    0 1px 3px rgba(0, 0, 0, 0.3),
+                    0 3px 5px rgba(0, 0, 0, 0.2),
+                    0 5px 10px rgba(0, 0, 0, 0.25),
+                    0 20px 20px rgba(0, 0, 0, 0.15)
+                    ;
+
+                --myPurple: rgb(161,100,200);
+
+			}
+
+			html, html * {
+			-ms-overflow-style: none;
+			scrollbar-width: none;
+			}
+
+			html::-webkit-scrollbar {
+			display: none;
+			}
+
+			section {
+				max-height: 100%;
+				overflow: scroll;
+				top:10px;bottom:0;left:auto;right:auto;
+			}
+
+            p, ul, li {
+                color: white;
+                font-size: 16pt;
+            }
+            em {
+                color: var(--myPurple);
+                font-size: 24pt;
+            }
+
+            .myHeading1 {
+                color: var(--myPurple);
+                font-size: 42pt;
+            }
+
+            .myHeading2 {
+                padding-bottom: 35px;
+                border-bottom: 7px double var(--myPurple);
+            }
+
+            .myHeading3 {
+                color: var(--myPurple);
+                font-size: 42pt;
+                border-top: 7px double var(--myPurple);
+            }
+
+            #inhalt {
+                text-align: left;
+            }
+
+            #realityCheck {
+                text-align: center;
+            }
+
+            #meinung {
+                text-align: right;
+            }
+
+            .myAnnotation {
+                text-align: right;
+                font-size: 18pt;
+                padding-right: 35px;
+            }
+
+            .myContent {
+                text-align: left;
+                line-height: 0;
+
+                padding: 0;
+                margin: 0;
+            }
+
+            .myContent p {
+                font-size: 20pt;
+                padding: 0;
+                margin: 20px 0 7px 0;
+            }
+
+            ul {
+                line-height: 30px;
+                list-style-position: inside;
+            }
+
+            ul li {
+                line-height: 25px;
+            }
+
+            ::marker {
+                content: "//\00a0\00a0\00a0";
+                font-size: 12pt;
+            }
+
+            #myQuote {
+                background-color: rgb(30,30,30);
+                box-shadow: 2px 3px 6px 0px rgba(15,0,20,0.5);
+                border-radius: 3px;
+
+                font-size: 20pt;
+
+                padding: 25px;
+                margin: 30px auto;
+            }
+
+            #myQuote p {
+                color: var(--myPurple);
+                font-size: 30pt;
+                font-family: league;
+
+                padding: 15px 0 0 0;
+                margin: 0;
+            }
+
+            #myQuote p#quoteCount {
+                font-family: iosevka-charon;
+                color: white;
+                font-size: 16pt;
+            }
+            #quoteCount::before {
+                content: "["
+            }
+            #quoteCount::after {
+                content: "]"
+            }
+
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			    <section data-transition="zoom" data-background-color="black"></section>
+			    <section data-background-image="myImgs/background01.png" style="bottom:auto">
+					<p class="myHeading1">NICHOLAS NEGROPONTE</p>
+					<h1 class="myHeading2">where bits and people meet</h1>
+					<p class="myAnnotation">aus <i>Being Digital</i> (1995)</p>
+				</section>
+				<section data-background-image="myImgs/background02.png">
+				    <p class="myHeading3" id="inhalt">Inhalt</p>
+
+					<div class="myContent">
+					<p class="fragment fade-in-then-semi-out">Problematik:</p>
+					<ul><li class="fragment fade-in-then-semi-out">hohe Komplexität und geringe Zugänglichkeit damaliger Rechner</li></ul>
+					</div>
+
+					<div id="myQuote" class="fragment fade-right">
+					Auf der Suche nach dem perfekten Human-Computer Interface:
+					<p>&ldquo;The problem is less like designing a dashboard and more like designing a human.&rdquo;</p>
+					<p id="quoteCount">1</p>
+					</div>
+
+
+					<div class="myContent">
+					    <ul><li class="fragment fade-in-then-semi-out">Verstehen und Imitieren menschlicher Kommunikation / Verhalten</li></ul>
+					    <p class="fragment fade-in-then-semi-out">Physisches Interface soll minimiert werden</p>
+					    <ul>
+							<li class="fragment fade-in-then-semi-out">verschiedene simultan laufende und sich ergänzende Kommunikationskanäle</li>
+							<li class="fragment fade-in-then-semi-out">Both/And im Gegensatz zu Either/Or</li>
+						</ul>
+						<p class="fragment fade-in-then-semi-out">Streitfrage: <em>Wie sähe Negropontes "ideales" Interface aus?</em></p>
+					</div>
+
+
+				</section>
+				<section data-background-image="myImgs/background03.png">
+				    <p class="myHeading3" id="realityCheck">Reality-Check</p>
+
+				</section>
+				<section data-background-image="myImgs/background04.png">
+				    <p class="myHeading3" id="meinung">Fazit?</p>
+
+								Kotze in meine Fotze alter
+
+
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="dist/plugin/notes.js"></script>
+		<script src="dist/plugin/markdown.js"></script>
+		<script src="dist/plugin/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				controls: false,
+				progress: true,
+
+				//disableLayout: true,
+
+				transition: 'fade',
+				transitionSpeed: 'slow',
+				backgroundTransition: 'fade', //slide zoom convex concave none
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+			});
+		</script>
+	</body>
+</html>
