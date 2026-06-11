@@ -7,7 +7,7 @@
 			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
 		/>
 
-		<title>reveal.js</title>
+		<title>Being Digital</title>
 
 		<link rel="stylesheet" href="dist/reset.css" />
 		<link rel="stylesheet" href="dist/reveal.css" />
@@ -27,6 +27,7 @@
                 font-family: iosevka-charon;
                 src: url(myFonts/IosevkaCharon/IosevkaCharon-Regular.ttf);
 			}
+
 
 			:root {
 
@@ -81,6 +82,10 @@
                 font-size: 24pt;
             }
 
+            #em::before {
+                content: "";
+            }
+
             .myHeading1 {
                 color: var(--myPurple);
                 font-size: 42pt;
@@ -97,6 +102,12 @@
                 border-top: 7px double var(--myPurple);
             }
 
+            .quellen {
+                color: var(--myPurple);
+                font-size: 42pt;
+                border-bottom: 7px double var(--myPurple);
+            }
+
             #inhalt {
                 text-align: left;
             }
@@ -105,7 +116,7 @@
                 text-align: center;
             }
 
-            #meinung {
+            #meinung, #quellen {
                 text-align: right;
             }
 
@@ -127,6 +138,9 @@
                 font-size: 20pt;
                 padding: 0;
                 margin: 20px 0 7px 0;
+            }
+            .myContent p::before {
+                content: " \\ ";
             }
 
             ul {
@@ -150,7 +164,7 @@
 
                 font-size: 20pt;
 
-                padding: 25px;
+                padding: 15px;
                 margin: 30px auto;
             }
 
@@ -159,20 +173,54 @@
                 font-size: 30pt;
                 font-family: league;
 
-                padding: 15px 0 0 0;
+                padding: 10px 0 0 0;
                 margin: 0;
             }
 
-            #myQuote p#quoteCount {
+            #myQuote p#quoteCount, #myIndirectQuote p#quoteCount {
                 font-family: iosevka-charon;
                 color: white;
                 font-size: 16pt;
+                border-radius: 3px;
             }
-            #quoteCount::before {
-                content: "["
+            #myQuote #quoteCount::before, #myIndirectQuote #quoteCount::before {
+                content: "[";
+                font-size: 16pt;
             }
-            #quoteCount::after {
-                content: "]"
+            #myQuote #quoteCount::after, #myIndirectQuote #quoteCount::after {
+                content: "]";
+                font-size: 16pt;
+            }
+            #myIndirectQuote {
+                border-radius: 3px;
+                padding: 10px 0;
+                margin: 25px;
+            }
+
+            /*FOCUS*/
+            .fragment.fade-left {
+                border: 3px solid grey;
+            }
+            .fragment.fade-left.current-fragment {
+                border: 3px solid white;
+            }
+
+
+            #myIndirectQuote p {
+                color: var(--myPurple);
+                font-size: 30pt;
+                font-family: league;
+
+                padding: 0;
+                margin: 0;
+            }
+            #myIndirectQuote p::before {
+                content: "// ";
+                font-size: 24pt;
+            }
+            #myIndirectQuote p::after {
+                content: " //";
+                font-size: 24pt;
             }
 
 		</style>
@@ -180,10 +228,10 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-			    <section data-transition="zoom" data-background-color="black"></section>
+			    <section data-background-color="black"></section>
 			    <section data-background-image="myImgs/background01.png" style="bottom:auto">
 					<p class="myHeading1">NICHOLAS NEGROPONTE</p>
-					<h1 class="myHeading2">where bits and people meet</h1>
+					<h1 class="myHeading2">where people <br>and bits meet</h1>
 					<p class="myAnnotation">aus <i>Being Digital</i> (1995)</p>
 				</section>
 				<section data-background-image="myImgs/background02.png">
@@ -191,12 +239,12 @@
 
 					<div class="myContent">
 					<p class="fragment fade-in-then-semi-out">Problematik:</p>
-					<ul><li class="fragment fade-in-then-semi-out">hohe Komplexität und geringe Zugänglichkeit damaliger Rechner</li></ul>
+					<ul><li class="fragment fade-in-then-semi-out">hohe Komplexität und Unzugänglichkeit damaliger Rechner</li></ul>
 					</div>
 
 					<div id="myQuote" class="fragment fade-right">
 					Auf der Suche nach dem perfekten Human-Computer Interface:
-					<p>&ldquo;The problem is less like designing a dashboard and more like designing a human.&rdquo;</p>
+					<p>&ldquo; The problem is less like designing a dashboard and more like designing a human. &rdquo;</p>
 					<p id="quoteCount">1</p>
 					</div>
 
@@ -214,16 +262,79 @@
 
 				</section>
 				<section data-background-image="myImgs/background03.png">
-				    <p class="myHeading3" id="realityCheck">Reality-Check</p>
+				    <p class="myHeading3" id="realityCheck">Einordnung</p>
+
+					<div class="myContent">
+					    <p class="fragment fade-in-then-semi-out">Personal Computers</p>
+						<p class="fragment fade-in-then-semi-out">Ausbau sensorischer Eingabemöglichkeiten</p>
+					</div>
+
+					<div id="myIndirectQuote" class="fragment fade-left">
+					    <p>Telefon wird zum digitalen Assistenten, der in jede Hosentasche passt</p>
+						<p id="quoteCount">2</p>
+					</div>
+
+					<div class="myContent">
+						<p class="fragment fade-in-then-semi-out">Gedächtnis, Verständnis & Persönlichkeit</p>
+						<p class="fragment fade-in-then-semi-out">Delegation</p>
+					</div>
+
+					<div id="myQuote" class="fragment fade-right">
+					    <p>&ldquo; What we today call "agent-based interfaces" will emerge as the dominant <br>means by which computers and people talk with one another. &rdquo;</p>
+						<p id="quoteCount">3</p>
+					</div>
 
 				</section>
 				<section data-background-image="myImgs/background04.png">
 				    <p class="myHeading3" id="meinung">Fazit</p>
-					oder whatever..
 
+					<div class="myContent">
+						<p class="fragment fade-in-then-semi-out">technisch näher an Negropontes Vision als je zuvor</p>
+						<ul><li class="fragment fade-in-then-semi-out">heutige KI erfüllt viele seiner Ideen und Nutzen für den Menschen</li></ul>
+						<p class="fragment fade-in-then-semi-out">gesellschaftlich / politisch weit entfernt</p>
+						<ul>
+							<li class="fragment fade-in-then-semi-out">Vision eines solchen Agenten ist heutzutage bedrohlich</li>
+							<li class="fragment fade-in-then-semi-out">Surveillance Capitalism</li>
+						</ul>
+						<p class="fragment fade-in-then-semi-out">aktuelle Problematik von KI:</p>
+						<ul>
+							<li class="fragment fade-in-then-semi-out">psychologische Risiken und Echo-Chamber-Problematik</li>
+							<li class="fragment fade-in-then-semi-out">technisch konstruierte Vertrauensmechanismen</li>
+							<li class="fragment fade-in-then-semi-out">Fehleranfälligkeit</li>
+						</ul>
+						<p id="em"><em class="fragment fade-in">Weder Negropontes Interface-Agents noch heutige KI sollten Personal Computers ersetzen</em></p>
+						<ul>
+						    <li class="fragment fade-in-then-semi-out">Menschheit? abhängig.</li>
+							<li class="fragment fade-in-then-semi-out">Denken? überflüssig.</li>
+						</ul>
+					</div>
 
 				</section>
 
+				<section data-background-image="myImgs/background01.png">
+				    <p id="quellen" class="myHeading3">Literaturquelle</p>
+
+					<div class="myContent">
+					    <p style="margin-top:50px;">Negroponte, Nicholas P. (1995): Where People and Bits Meet</p>
+						<ul style="margin-bottom: 50px; padding-bottom: 10px; border-bottom: 7px double var(--myPurple);">
+						    <li>in: <i>Being Digital</i>, FIRST VINTAGE BOOKS EDITION, JANUARY 1996, New York: Vintage Books, S. 64-74</li>
+						</ul>
+						<p>[1]</p>
+						<ul>
+						    <li>S. 67 Z. 29f</li>
+						</ul>
+						<p>[2]</p>
+						<ul>
+						    <li>S. 68 Z. 15f</li>
+						</ul>
+						<p>[3]</p>
+						<ul>
+						    <li>S. 74 Z. 21f</li>
+						</ul>
+					</div>
+
+				</section>
+				<section data-background-color="black"></section>
 			</div>
 		</div>
 
@@ -244,7 +355,7 @@
 
 				transition: 'fade',
 				transitionSpeed: 'slow',
-				backgroundTransition: 'fade', //slide zoom convex concave none
+				backgroundTransition: 'fade',
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
